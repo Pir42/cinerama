@@ -23,6 +23,28 @@ window.movies = [
     date: 1963,
     lang: "fr",
     genre: "science-fiction"
+  },
+  {
+    title: "Titanic",
+    realisator: {
+      name: "James Cameroun",
+      nationality: "American",
+      birth_date: "19/03/1975"
+    },
+    date: 1963,
+    lang: "fr",
+    genre: "science-fiction"
+  },
+  {
+    title: "Titanic",
+    realisator: {
+      name: "James Cameroun",
+      nationality: "American",
+      birth_date: "19/03/1975"
+    },
+    date: 1963,
+    lang: "fr",
+    genre: "science-fiction"
   }
 ]
 
