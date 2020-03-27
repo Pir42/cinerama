@@ -12,18 +12,18 @@
     </v-col>
     <v-row>
       <v-col cols="12" xs="12" sm="6" md="4" v-for="(movie, index) in filtered_movies" :key="index">
-        <movie :movie="movie" class="ma-2 pa-3">
+        <movie-card :movie="movie" class="ma-2 pa-3">
           <template v-slot:actions>
             <v-btn outlined :to="{ name: 'Movie', params: { index: index }}">Voir</v-btn>
           </template>
-        </movie>
+        </movie-card>
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
-import Movie from "../components/Movie"
+import MovieCard from "../components/MovieCard"
 
 export default {
   data() {
@@ -33,7 +33,7 @@ export default {
     }
   },
   components: {
-    Movie
+    MovieCard
   },
   computed: {
     filtered_movies() {

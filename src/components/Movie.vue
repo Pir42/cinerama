@@ -1,15 +1,17 @@
 <template>
   <div id="movie">
-    <v-card class="pa-4" outlined>
-      <v-list-item-content>
-        <h5>{{ movie.title }}</h5>
-        <p>{{ movie.date }}</p>
-        <p>{{ movie.genre }}</p>
-      </v-list-item-content>
-      <v-card-actions>
-        <slot name="actions"></slot>
-      </v-card-actions>
-    </v-card>
+    <h1>{{ movie.title }}</h1>
+    <p>{{ movie.date }}</p>
+    <p>{{ movie.genre }}</p>
+
+    <p>À propos du réalisateur</p>
+    <ul>
+      <li>{{ movie.realisator.name }}</li>
+      <li>Date de naissance : {{ movie.realisator.birth_date }}</li>
+      <li>Nationalité : {{ movie.realisator.nationality }}</li>
+    </ul>
+
+    <slot name="actions"></slot>
   </div>
 </template>
 
