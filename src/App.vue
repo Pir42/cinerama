@@ -1,28 +1,54 @@
+  
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div id="app">
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+    >
+      <v-list dense>
+        <v-list-item link to="/">
+          <v-list-item-action>
+            <v-icon>mdi-movie</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Voir tous mes films</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar
+      app
+      color="amber darken-3"
+      dark
+    >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title><router-link to="/" class="white--text no-underline">Cinérama</router-link></v-toolbar-title>
+    </v-app-bar>
+
+    <v-content>
+      <v-container class="mt-5">
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+  </v-app>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    props: {
+      source: String,
+    },
+    data: () => ({
+      drawer: null,
+    }),
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.no-underline {
+  text-decoration: none;
 }
 </style>
