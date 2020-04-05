@@ -1,11 +1,12 @@
 <template>
   <div id="movie">
-    <v-card class="pa-4" outlined>
-      <v-list-item-content>
-        <h5>{{ movie.title }}</h5>
-        <p>{{ movie.date }}</p>
-        <p>{{ movie.genre }}</p>
-      </v-list-item-content>
+    <v-card>
+      <v-card-title>{{ movie.title }}</v-card-title>
+      <v-card-subtitle>{{ movie.genre }}</v-card-subtitle>
+      <v-card-text>
+        Réalisé en {{ movie.date }} par {{ movie.realisator.name }}
+        <v-rating v-model="movie.rating" half-increments readonly color="yellow darken-3"></v-rating>
+      </v-card-text>
       <v-card-actions>
         <slot name="actions"></slot>
       </v-card-actions>
